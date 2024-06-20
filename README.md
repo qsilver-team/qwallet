@@ -1,1 +1,1 @@
-# qwallet
+# qwallet-desktop
