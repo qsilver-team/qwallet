@@ -1,0 +1,49 @@
+#################################
+# Valis Generic .gitignore file #
+#################################
+
+# Ignore README files
+README
+README.md
+README.txt
+README.*
+
+# Ignore private key files
+*.key
+*.pem
+
+# Ignore environment variable files
+*.env
+
+# Ignore secrets directory
+secrets/
+
+# Ignore log files
+*.log
+logs/
+*.log.*
+
+# Ignore temporary files and directories
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Ignore configuration files
+*.config
+*.cfg
+*.ini
+
+# Ignore sensitive data files
+*.dat
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore backup files
+*.bak
+*.old
+*.backup
+
+# Ignore credentials files
+*.credentials
