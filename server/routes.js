@@ -15,10 +15,17 @@ router.post('/restore', mainController.restoreAccount);
 router.post('/transfer', mainController.transfer);
 router.post('/socket', mainController.socket);
 router.post('/balances', mainController.balances);
-router.post('/transfer-status', mainController.transferStatus);
+router.post('/tx-status', mainController.txStatus);
 router.post('/history', mainController.history);
 router.post('/switch-network', mainController.switchNetwork);
 router.post('/tokens', mainController.tokens);
 router.post('/basic-info', mainController.basicInfo);
+router.post('/check-authenticated', mainController.checkAuthenticated);
+router.post('/trading-page-info', mainController.fetchTradingPageInfo);
+router.post('/ccall-v1request', mainController.ccallV1request);
+router.post('/send-tx', mainController.sendTx);
+router.post('/update-userstate', mainController.updatedUserState);
+router.post('/prices', mainController.getPrice);
+router.post('/call-socket', mainController.callSocket);
 
 module.exports = router;

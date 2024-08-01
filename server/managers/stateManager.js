@@ -2,6 +2,7 @@ let userState = {};
 let remoteSubshas = "";
 let localSubshash = "";
 let socketState = {};
+let tick;
 
 // export interface AccountDetailType {
 //     addresses: string[],
@@ -19,13 +20,14 @@ module.exports = {
         userState = {
             isAuthenticated: false,
             password: '',
+            currentAddress: "",
             accountInfo: {
                 addresses: [],
                 numaddrs: 0,
                 subshash: ""
             }
-        },
-            remoteSubshas = "";
+        }
+        remoteSubshas = "";
         localSubshash = "";
         return userState;
     },
@@ -38,6 +40,9 @@ module.exports = {
     setUserState: (userDetail) => {
         userState = { ...userDetail };
         return userState;
+    },
+    updateUserState: (data) => {
+        userState = { ...userState, ...data };
     },
     setRemoteSubshash: (subshash) => {
         remoteSubshas = subshash;
@@ -59,5 +64,12 @@ module.exports = {
     },
     getSocketState: (flag) => {
         return socketState[flag];
+    },
+    setTick: (_tick) => {
+        tick = _tick;
+        return tick;
+    },
+    getTick: () => {
+        return tick;
     }
 };

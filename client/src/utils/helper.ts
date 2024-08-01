@@ -5,8 +5,25 @@ const handleCopy = async (value: any) => {
     await navigator.clipboard.writeText(`${value}`);
 }
 
-const delay = (ms: number) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function isNaturalNumber(str: string): boolean {
+    // Regular expression to match a natural number (non-negative integer)
+    const naturalNumberRegex = /^[0-9]+$/;
+    return naturalNumberRegex.test(str);
 }
 
-export { handleCopy, delay }
+function isPositiveNumber(str: string): boolean {
+    // Regular expression to match a positive integer (greater than zero)
+    const positiveNumberRegex = /^[1-9][0-9]*$/;
+    return positiveNumberRegex.test(str);
+}
+
+function formatNumberWithCommas(number: any) {
+    if (!number) return 0;
+    const options = (Number.isInteger(number) || typeof number == "bigint")
+        ? {}
+        : { minimumFractionDigits: 3, maximumFractionDigits: 3 };
+
+    return number.toLocaleString('en-US', options);
+}
+
+export { handleCopy, isNaturalNumber, isPositiveNumber, formatNumberWithCommas }
